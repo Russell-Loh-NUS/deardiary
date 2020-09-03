@@ -9,14 +9,12 @@ router.get('/', (req, res) => {
       return res.json({ status: 500, data: err });
     }
     if(!result){ // Empty result
-      return res.json({
-          status: 200,
+      return res.status(200).json({
           data: "There are no diary entries stored. Start by adding one using a POST request!"
       });
     }
 
-    return res.json({
-        status: 200,
+    return res.status(200).json({
         data: result
     });
   });
@@ -32,17 +30,15 @@ router.get('/:id', (req, res) => {
 
   DiaryModel.findById(id, function (err, result) {
     if (err) {
-      return res.json({ status: 500, data: err });
+      return res.status(500).json({ data: err });
     }
     if(!result){ // Empty result
-      return res.json({
-          status: 200,
+      return res.status(200).json({
           data: "Unable to find diary entry."
       });
     }
 
-    return res.json({
-        status: 200,
+    return res.status(200).json({
         data: result
     });
   });
@@ -52,18 +48,17 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   let data = req.body;
   if(!data.title || !data.body){
-    return res.json({ status: 400, data: "Please ensure you have entered a title and a body." });
+    return res.status(400).json({ data: "Please ensure you have entered a title and a body." });
   }
 
   let entry = new DiaryModel({ title: data.title, body: data.body });
 
   entry.save(function (err) {
     if (err) {
-      return res.json({ status: 500, data: err });
+      return res.status(500).json({ data: err });
     }
 
-    return res.json({
-        status: 200,
+    return res.status(200).json({
         data: "Diary entry created successfully."
     });
   });
@@ -75,18 +70,17 @@ router.put('/:id', (req, res) => {
   let id = req.params.id;
 
   if(!id || (!data.title && !data.body)){
-    return res.json({ status: 400, data: "Please ensure you have entered either a title or a body and specified an id." });
+    return res.status(400).json({ data: "Please ensure you have entered either a title or a body and specified an id." });
   }
 
   let entry = new DiaryModel({ title: data.title, body: data.body });
 
   DiaryModel.findById(id, function (err, result) {
     if (err) {
-      return res.json({ status: 500, data: err.reason });
+      return res.status(500).json({ data: err.reason });
     }
     if(!result){ // Empty result
-      return res.json({
-          status: 200,
+      return res.status(200).json({
           data: "Unable to find diary entry."
       });
     }
@@ -96,11 +90,10 @@ router.put('/:id', (req, res) => {
 
     result.save(function (err) {
       if (err) {
-        return res.json({ status: 500, data: err });
+        return res.status(500).json({ data: err });
       }
 
-      return res.json({
-          status: 200,
+      return res.status(200).json({
           data: "Diary entry updated successfully."
       });
     });
@@ -112,23 +105,21 @@ router.delete('/', (req, res) => {
   let data = req.body;
 
   if(!data.id){
-    return res.json({ status: 400, data: "Please ensure that you have specified an id." });
+    return res.status(400).json({ data: "Please ensure that you have specified an id." });
   }
 
   DiaryModel.remove({ _id: data.id }, function (err, result) {
     if (err) {
-      return res.json({ status: 500, data: err });
+      return res.status(500).json({ data: err });
     }
 
     if(result.deletedCount == 0){ // Empty result
-      return res.json({
-          status: 200,
+      return res.status(200).json({
           data: "Unable to find diary entry."
       });
     }
 
-    return res.json({
-        status: 200,
+    return res.status(200).json({
         data: "Diary entry deleted successfully."
     });
   });

@@ -2,3 +2,10 @@ language: node_js
 node_js:
   - 12
 services: mongodb
+deploy:
+  provider: lambda
+  function_name: "DearDiary"
+  region: "ap-southeast-1"
+  role: "arn:aws:iam::865671041203:role/TravisLambdaRole"
+  runtime: "nodejs12.x"
+  handler_name: "handler"

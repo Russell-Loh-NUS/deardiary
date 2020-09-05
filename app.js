@@ -3,6 +3,7 @@ let app = express();
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let diaryRouter = require("./routers/diaryRouter");
+let serverless = require('serverless-http');
 
 // Body parser
 app.use(bodyParser.urlencoded({
@@ -11,7 +12,11 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // MongoDB
-mongoose.connect('mongodb://localhost/deardiary', { useNewUrlParser: true, useUnifiedTopology: true});
+let endpoint = 'mongodb+srv://admin:admin@cluster0.jdlmg.mongodb.net/deardiary?retryWrites=true&w=majority';
+if(process.env.NODE_ENV == 'dev'){
+  endpoint = 'mongodb://localhost/deardiary';
+}
+mongoose.connect(endpoint, { useNewUrlParser: true, useUnifiedTopology: true});
 let db = mongoose.connection;
 if(!db)
     console.log("DB not connected. Please ensure mongodb is started by running `mongod`.");
@@ -26,3 +31,4 @@ app.listen(port, function () {
 });
 
 module.exports = app;
+module.exports.handler = serverless(app);

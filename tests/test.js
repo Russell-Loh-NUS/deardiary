@@ -1,5 +1,5 @@
 let chai = require('chai');
-let app = require('./../index');
+let app = require('./../app');
 const expect = require("chai").expect;
 
 chai.use(require('chai-http'));

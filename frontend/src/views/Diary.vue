@@ -59,7 +59,7 @@
 import axios from 'axios';
 import Entry from '../components/Entry.vue';
 
-let endpoint = `http://localhost:8080/api/diary/`;
+let endpoint = process.env.VUE_APP_API_ENDPOINT;
 
 export default {
   name: 'Diary',

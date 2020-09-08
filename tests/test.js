@@ -68,9 +68,7 @@ describe("Diary", () => {
        it("Delete a diary entry", (done) => {
          let entry = data[data.length - 1];
          chai.request(app)
-         .delete('/api/diary/')
-         .set('content-type', 'application/x-www-form-urlencoded')
-         .send({id: entry._id})
+         .delete('/api/diary/' + entry._id)
          .end((err, res) => {
            res.should.have.status(200);
            res.body.should.be.a('object');

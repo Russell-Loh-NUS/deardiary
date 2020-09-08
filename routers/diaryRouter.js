@@ -101,14 +101,14 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE a diary entry
-router.delete('/', (req, res) => {
-  let data = req.body;
+router.delete('/:id', (req, res) => {
+  let id = req.params.id;
 
-  if(!data.id){
+  if(!id){
     return res.status(400).json({ data: "Please ensure that you have specified an id." });
   }
 
-  DiaryModel.remove({ _id: data.id }, function (err, result) {
+  DiaryModel.remove({ _id: id }, function (err, result) {
     if (err) {
       return res.status(500).json({ data: err });
     }

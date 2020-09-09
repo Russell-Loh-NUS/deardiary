@@ -24,7 +24,7 @@ describe("Diary", () => {
         });
       });
 
-      it("Insert a new diary entry - Without body(Error 400)", (done) => {
+      it("Insert a new diary entry - Without body", (done) => {
         chai.request(app)
         .post('/api/diary/')
         .set('content-type', 'application/x-www-form-urlencoded')
@@ -36,7 +36,7 @@ describe("Diary", () => {
         });
       });
 
-      it("Insert a new diary entry - Without title(Error 400)", (done) => {
+      it("Insert a new diary entry - Without title", (done) => {
         chai.request(app)
         .post('/api/diary/')
         .set('content-type', 'application/x-www-form-urlencoded')
@@ -100,7 +100,7 @@ describe("Diary", () => {
          });
        });
 
-       it("Delete a diary entry - Invalid id(400 Error)", (done) => {
+       it("Delete a diary entry - Invalid id", (done) => {
          let entry = data[data.length - 1];
          chai.request(app)
          .delete('/api/diary/' + entry._id)

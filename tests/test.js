@@ -24,6 +24,30 @@ describe("Diary", () => {
         });
       });
 
+      it("Insert a new diary entry - Without body(Error 400)", (done) => {
+        chai.request(app)
+        .post('/api/diary/')
+        .set('content-type', 'application/x-www-form-urlencoded')
+        .send({title: testTitle})
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          done();
+        });
+      });
+
+      it("Insert a new diary entry - Without title(Error 400)", (done) => {
+        chai.request(app)
+        .post('/api/diary/')
+        .set('content-type', 'application/x-www-form-urlencoded')
+        .send({body: testBody})
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          done();
+        });
+      });
+
       it("Get all diary entries", (done) => {
         chai.request(app)
         .get('/api/diary/')
@@ -71,6 +95,17 @@ describe("Diary", () => {
          .delete('/api/diary/' + entry._id)
          .end((err, res) => {
            res.should.have.status(200);
+           res.body.should.be.a('object');
+           done();
+         });
+       });
+
+       it("Delete a diary entry - Invalid id(400 Error)", (done) => {
+         let entry = data[data.length - 1];
+         chai.request(app)
+         .delete('/api/diary/' + entry._id)
+         .end((err, res) => {
+           res.should.have.status(400);
            res.body.should.be.a('object');
            done();
          });

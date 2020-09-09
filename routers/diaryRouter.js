@@ -114,7 +114,7 @@ router.delete('/:id', (req, res) => {
     }
 
     if(result.deletedCount == 0){ // Empty result
-      return res.status(200).json({
+      return res.status(400).json({
           data: "Unable to find diary entry."
       });
     }

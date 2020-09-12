@@ -92,3 +92,15 @@ Upon entering the webpage, the diary entries are automatically retrieved from th
 1.	To add a new diary entry, select ‘+ Add Entry’ on the top right and input the title and body fields. Select ‘OK’ to submit the entry. This will make a POST request to the local server creating a new entry.
 2.	To edit a diary entry, select the yellow pencil icon beside an entry and edit the necessary fields. Select ‘OK’ to submit your changes. This will make a PUT request to the local server updating the entry.
 3.	To delete a diary entry, select the red trash icon beside an entry. Select ‘OK’ to confirm the deletion. This will make a DELETE request to the local server which will delete the entry.
+
+## FAQ
+Q: I am getting “‘mongod’ is not recognized as an internal or external command”.
+
+A: Please see https://stackoverflow.com/a/41507803 for a guide on how to add MongoDB to your system’s environment variable.
+
+Q: I am getting “NonExistentPath: Data directory C:\\data\\db\\ not found” on Windows when running `mongod`.
+
+A: Due to new installations of MongoDB not having the `data\db` folder created under the C drive, you will need to create it. Follow the following steps to create this folder:
+1. Open your C drive `C:\`.
+2. Create a folder with name `data` and open it. 3. Create a subfolder with name `db`.
+4. You should now be able to run `mongod`.

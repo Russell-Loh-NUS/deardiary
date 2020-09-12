@@ -11,7 +11,7 @@
 
 ### Instructions to start the server:
 1.	Clone the repository into your local machine.
-2.	Open Command Prompt/Terminal and run `mongod` to start MongoDB.
+2.	Open Command Prompt/Terminal and run `mongod` to start MongoDB. Please see FAQ at the end of this document, if you are having trouble starting MongoDB.
 3.	Open another Command Prompt/Terminal window and `cd` into the cloned repository.
 4.	Run `npm install` to install the dependencies.
 5.	Run `npm run dev` to start the NodeJS server locally.
@@ -44,7 +44,7 @@ Testing can be done either manually(locally) or automatically using Travis which
 
 ### To run the tests locally:
 1.	Clone the repository into your local machine.
-2.	Open Command Prompt/Terminal and run `mongod` to start MongoDB.
+2.	Open Command Prompt/Terminal and run `mongod` to start MongoDB. Please see FAQ at the end of this document, if you are having trouble starting MongoDB.
 3.	Open another Command Prompt/Terminal window and `cd` into the cloned repository.
 4.	Run `npm install` to install the dependencies.
 5.	Run `npm test` to run the tests locally.

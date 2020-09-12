@@ -13,7 +13,8 @@
 1.	Clone the repository into your local machine.
 2.	Open Command Prompt/Terminal and run `mongod` to start MongoDB.
 3.	Open another Command Prompt/Terminal window and `cd` into the cloned repository.
-4.	Run `npm run dev` to start the NodeJS server locally.
+4.	Run `npm install` to install the dependencies.
+5.	Run `npm run dev` to start the NodeJS server locally.
 
 ### Making API requests
 There are two ways to call the APIs which is either locally or to the deployed endpoint. The instruction for both is similar except that they differ in their respective endpoints that you will be making the calls to.
@@ -45,7 +46,8 @@ Testing can be done either manually(locally) or automatically using Travis which
 1.	Clone the repository into your local machine.
 2.	Open Command Prompt/Terminal and run `mongod` to start MongoDB.
 3.	Open another Command Prompt/Terminal window and `cd` into the cloned repository.
-4.	Run `npm test` to run the tests locally.
+4.	Run `npm install` to install the dependencies.
+5.	Run `npm test` to run the tests locally.
 
 ### Automate testing with Travis:
 The following will detail how Travis is setup to help automate testing for the project with every push to the repository.
@@ -79,8 +81,9 @@ The frontend is built using the VueJS framework with Bootstrap being used for st
 1.	Clone the repository into your local machine.
 2.	Start the server as instructed in ‘Task B1’ under ‘Instructions to start the server’.
 3.	Open another Command Prompt/Terminal window and `cd` into the `frontend` folder in the cloned repository.
-4.	Run `npm run serve` to start the client.
-5.	On your browser, enter the following url to access the webpage:
+4.	Run `npm install` to install the dependencies.
+5.	Run `npm run serve` to start the client.
+6.	On your browser, enter the following url to access the webpage:
 http://localhost:3000/
 
 ### How to use the application:

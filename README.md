@@ -102,5 +102,6 @@ Q: I am getting “NonExistentPath: Data directory C:\\data\\db\\ not found” o
 
 A: Due to new installations of MongoDB not having the `data\db` folder created under the C drive, you will need to create it. Follow the following steps to create this folder:
 1. Open your C drive `C:\`.
-2. Create a folder with name `data` and open it. 3. Create a subfolder with name `db`.
+2. Create a folder with name `data` and open it.
+3. Create a subfolder with name `db`.
 4. You should now be able to run `mongod`.

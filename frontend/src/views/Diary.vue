@@ -98,6 +98,8 @@ export default {
         body: this.new_entry_body
       })
       .then(() => {
+        this.new_entry_title = "";
+        this.new_entry_body = "";
         this.fetchEntries();
       })
       .catch(e => {

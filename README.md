@@ -1,10 +1,10 @@
 # DearDiary [![Build Status](https://travis-ci.org/Russell-Loh-NUS/deardiary.svg?branch=master)](https://travis-ci.org/Russell-Loh-NUS/deardiary)
 
 ## Pre-requisites:
-1.	MongoDB installed
-2.	NodeJS installed
-3.	NPM installed
-4.	Postman installed
+1.	[MongoDB](https://docs.mongodb.com/manual/installation/) installed
+2.	[NodeJS](https://nodejs.org/en/download/) installed
+3.	[NPM](https://www.npmjs.com/get-npm) installed
+4.	[Postman](https://www.postman.com/downloads/) installed
 5.	Ensure no application is running on port 3000 and 8080
 
 ## Task B1

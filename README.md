@@ -4,8 +4,9 @@
 1.	[MongoDB](https://docs.mongodb.com/manual/installation/) installed
 2.	[NodeJS](https://nodejs.org/en/download/) installed
 3.	[NPM](https://www.npmjs.com/get-npm) installed
-4.	[Postman](https://www.postman.com/downloads/) installed
-5.	Ensure no application is running on port 3000 and 8080
+4.	[Nodemon](https://nodemon.io/) installed (Requires NPM)
+5.	[Postman](https://www.postman.com/downloads/) installed
+6.	Ensure no application is running on port 3000 and 8080
 
 ## Task B1
 

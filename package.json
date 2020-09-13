@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app",
-    "dev": "NODE_ENV=dev nodemon app",
-    "test": "NODE_ENV=dev mocha tests/*.js --exit"
+    "dev": "cross-env NODE_ENV=dev nodemon app",
+    "test": "cross-env NODE_ENV=dev mocha tests/*.js --exit"
   },
   "author": "Russell Loh",
   "license": "ISC",
@@ -18,5 +18,8 @@
     "mocha": "^5.1.1",
     "mongoose": "^5.10.2",
     "serverless-http": "^2.5.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
   }
 }
